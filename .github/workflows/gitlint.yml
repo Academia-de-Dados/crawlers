@@ -1,0 +1,25 @@
+---
+on:
+  pull_request:
+    branches:
+      - 'main'
+  push:
+
+name: 'Lint commit messages'
+jobs:
+  gitlint:
+    name: 'commit messages'
+    runs-on: 'ubuntu-latest'
+
+    steps:
+      - name: 'Checkout code'
+        uses: 'actions/checkout@v3'
+      - name: 'Set up python 3.11'
+        uses: 'actions/setup-python@v4'
+        with:
+          python-version: '3.11'
+
+      - name: 'Install gitlint'
+        run: 'pip install "gitlint==0.19.1"'
+      - name: 'Test Commit Messages Lint'
+        run: 'gitlint'
