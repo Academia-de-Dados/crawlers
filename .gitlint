@@ -1,0 +1,6 @@
+[general]
+ignore=body-is-missing
+contrib=contrib-title-conventional-commits
+
+ignore-revert-commits=true
+ignore-squash-commits=true
