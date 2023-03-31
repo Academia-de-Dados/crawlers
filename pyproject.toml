@@ -21,7 +21,13 @@ classifiers = [
 dependencies = ["scrapy>=2.8.0,<3.0.0"]
 
 [project.optional-dependencies]
-dev = ["ipython>=8.12.0,<9.0.0", "ipdb>=0.13.13,<1.0.0", "gitlint==0.19.1"]
+dev = [
+  "ipython>=8.12.0,<9.0.0",
+  "ipdb>=0.13.13,<1.0.0",
+  "gitlint==0.19.1",
+  "pre-commit>=3.2.1,4.0.0",
+  "ruff>=0.0.260,<1.0.0",
+]
 
 dynamic = ["version"]
 
@@ -32,3 +38,113 @@ Source = "https://github.com/Academia-de-Dados/crawlers"
 
 [tool.hatch.version]
 path = "exam/__about__.py"
+
+[tool.ruff]
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+select = [
+  "A",
+  "B",
+  "D",
+  "E",
+  "G",
+  "I",
+  "N",
+  "Q",
+  "W",
+  "ANN",
+  "ARG",
+  "BLE",
+  "COM",
+  "DTZ",
+  "EM",
+  "ERA",
+  "FBT",
+  "ICN",
+  "INP",
+  "ISC",
+  "PIE",
+  "PL",
+  "PT",
+  "PTH",
+  "PYI",
+  "RET",
+  "RSE",
+  "RUF",
+  "SIM",
+  "SLF",
+  "TCH",
+  "TID",
+  "TRY",
+  "UP",
+  "YTT",
+]
+ignore = [
+  "D100",
+  "D101",
+  "D102",
+  "D104",
+  "D203",
+  "D212",
+  "ANN001",
+  "ANN101",
+  "ANN102",
+  "ANN201",
+  "ANN206",
+  "ARG002",
+  "Q000",
+  "G002",
+]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = [
+  "A",
+  "B",
+  "D",
+  "E",
+  "G",
+  "I",
+  "N",
+  "Q",
+  "W",
+  "ANN",
+  "ARG",
+  "BLE",
+  "COM",
+  "DTZ",
+  "EM",
+  "ERA",
+  "FBT",
+  "ICN",
+  "INP",
+  "ISC",
+  "PIE",
+  "PL",
+  "PT",
+  "PTH",
+  "PYI",
+  "RET",
+  "RSE",
+  "RUF",
+  "SIM",
+  "SLF",
+  "TCH",
+  "TID",
+  "TRY",
+  "UP",
+  "YTT",
+]
+unfixable = []
+
+exclude = [".git", ".ruff_cache", "dist", ".venv", ".cache"]
+
+
+line-length = 79
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.10.
+target-version = "py310"
+
+[tool.ruff.mccabe]
+max-complexity = 10
