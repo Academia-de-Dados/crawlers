@@ -1,18 +1,18 @@
-## Description
-<!--- Describe your changes -->
+## Descrição
+<!--- Descreva suas mudanças -->
 
-## Motivation behind this PR?
-<!--- Why is the change required? Does it fix an existing issue, please link the issue. -->
+## Motivação por trás deste PR?
+<!--- Por que a alteração é necessária? Isso corrige um problema existente, por favor, vincule o problema. -->
 
-## What type of change is this?
-<!--- Bug Fix or Feature or Breaking Change i.e fix or feature that would cause existing functionality to not work as expected -->
+## Que tipo de mudança é essa?
+<!--- Correção de bug ou recurso ou alteração de última hora, ou seja, correção ou recurso que faria com que a funcionalidade existente não funcionasse conforme o esperado -->
 
-## Checklist
-<!-- If any particular item isn't necessary with your change, check it anyway so that the reviewer knows nothing is pending in the PR -->
+## Lista de controle
+<!-- Se algum item específico não for necessário com sua alteração, verifique-o de qualquer maneira para que o revisor saiba que não há nada pendente no PR -->
 
-- [ ] I have self-documented code my changes by adding docstring(s) and comment(s).
-- [ ] My code follows the style guidelines of this project.
+- [ ] Eu autodocumentei minhas alterações no código adicionando docstring(s) e comentário(s).
+- [ ] Meu código segue as diretrizes de estilo deste projeto.
 
-## Issue
-<!--- All PRs must have a related issue. This way we can ensure that no one loses time working in something that does not needed to be done. -->
+## Emitir
+<!--- Todos os PRs devem ter um problema relacionado. Assim podemos garantir que ninguém perca tempo trabalhando em algo que não precisa ser feito. -->
 Closes #<issue_number>

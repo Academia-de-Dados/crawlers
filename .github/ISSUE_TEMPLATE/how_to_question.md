@@ -1,17 +1,17 @@
 ---
-name: Question
-about: ❓ How to questions with project
-labels: Question, Support
+name: Pergunta
+about: ❓ Como fazer perguntas com projeto
+lables: Pergunta, Suporte
 assignees:
 
 ---
 
-### Environment
-- Operating System:
-- Python version:
+### Ambiente
+- Sistema operacional:
+- Versão Python:
 
-### What you intend to do with project ?
-<!-- A clear and concise description of what you want to with project. -->
+### O que você pretende fazer com o projeto?
+<!-- Uma descrição clara e concisa do que você deseja com o projeto. -->
 
-### Expected behavior ?
-<!-- A clear and concise description of what you expected to happen. -->
+### Comportamento esperado ?
+<!-- Uma descrição clara e concisa do que você esperava que acontecesse. -->

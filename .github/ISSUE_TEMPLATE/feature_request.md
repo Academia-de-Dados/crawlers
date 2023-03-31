@@ -1,18 +1,18 @@
 ---
-name: Feature request
-about: 🌟 Submit a feature request.
-labels: Enhancement, Needs Triage
+name: Solicitação de recurso
+about: ​​🌟 Envie uma solicitação de recurso.
+lables: Aprimoramento, Triagem de necessidades
 assignees:
 
 ---
 
-## Feature request
+## Solicitação de recurso
 
-### Description the feature
-<!-- A clear and concise description of what the new feature is. -->
+### Descrição do recurso
+<!-- Uma descrição clara e concisa do que é o novo recurso. -->
 
-### Is your feature request related to a problem?
-<!-- A clear and concise description of the problem. -->
+### Sua solicitação de recurso está relacionada a um problema?
+<!-- Uma descrição clara e concisa do problema. -->
 
-### Do you have any suggestions on how to add this feature in project ?
-<!-- Suggestions regarding what tools to use, what approach would be best fit or things to look out for while adding this this feature. -->
+### Você tem alguma sugestão sobre como adicionar esse recurso no projeto?
+<!-- Sugestões sobre quais ferramentas usar, qual abordagem seria mais adequada ou coisas a serem observadas ao adicionar este recurso. -->

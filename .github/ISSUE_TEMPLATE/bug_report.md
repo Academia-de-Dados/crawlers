@@ -1,25 +1,25 @@
 ---
-name: Bug report
-about: 🐛 Create a a bug report.
-labels: Bug, Needs Triage
+name: Relatório de bug
+about: ​​🐛 Crie um relatório de bug.
+lables: Bug, Precisa de triagem
 assignees:
 
 ---
 
-## Bug report
+## Relatório de bug
 
-### Environment
-- Operating System:
-- Python version:
+### Ambiente
+- Sistema operacional:
+- Versão Python:
 
-### Description of the bug
-<!-- A clear and concise description of what the bug is. -->
+### Descrição do bug
+<!-- Uma descrição clara e concisa do que é o bug. -->
 
-### Expected behavior ?
-<!-- A clear and concise description of what you expected to happen. -->
+### Comportamento esperado ?
+<!-- Uma descrição clara e concisa do que você esperava que acontecesse. -->
 
-### How to reproduce the the bug ?
-<!-- Steps to reproduce the issue. -->
+### Como reproduzir o bug ?
+<!-- Etapas para reproduzir o problema. -->
 
-### Anthing else we need to know?
-<!-- Add any other additional details about the issue. -->
+### Algo mais que precisamos saber?
+<!-- Adicione quaisquer outros detalhes adicionais sobre o problema. -->
