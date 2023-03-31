@@ -1,0 +1,29 @@
+---
+on:
+  pull_request:
+    branches:
+      - 'main'
+  push:
+
+name: 'Lint check'
+jobs:
+  ruff:
+    name: 'ruff check'
+    runs-on: 'ubuntu-latest'
+    strategy:
+      matrix:
+        python-version:
+          - '3.10'
+          - '3.11'
+    steps:
+      - name: 'Checkout code'
+        uses: 'actions/checkout@v3'
+      - name: 'Set up python ${{ matrix.python-version }}'
+        uses: 'actions/setup-python@v4'
+        with:
+          python-version: '${{ matrix.python-version }}'
+
+      - name: 'Install ruff'
+        run: 'pip install "ruff>=0.0.260,<1.0.0"'
+      - name: 'Test Code Lint'
+        run: 'ruff check .'
