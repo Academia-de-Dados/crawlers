@@ -1,4 +1,8 @@
-# Crawlers
+<p align="center">
+  <img alt="Crawlers" src="./assets/spider.png" alt="Dynaconf" width="300px"></a>
+</p>
+<h1><p align="center"><strong>Crawlers</strong></p></h1>
+
 
 <p align="center">
     <a href="https://github.com/Academia-de-Dados/crawlers/actions">
