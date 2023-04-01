@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "exam"
 description = "Obtem questões para os vestibulares/enem"
 readme = { "file" = "README.md", "content-type" = "text/markdown" }
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = "GPL-3.0-only"
 keywords = ["python", "exam", "scrapy", "crawlers", "enem"]
 authors = [{ name = "Igor Matos", email = "igor.matos@ish.com.br" }]
@@ -14,7 +14,6 @@ classifiers = [
   "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Framework :: Scrapy",
 ]
@@ -143,8 +142,8 @@ line-length = 79
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
-# Assume Python 3.10.
-target-version = "py310"
+# Assume Python 3.11.
+target-version = "py311"
 
 [tool.ruff.mccabe]
 max-complexity = 10
