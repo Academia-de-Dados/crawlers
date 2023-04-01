@@ -5,6 +5,9 @@
 
 
 <p align="center">
+    <a href="https://gitpod.io/#https://github.com/Academia-de-Dados/crawlers">
+      <img alt="Contribute with Gitpod" src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"/>
+    </a>
     <a href="https://github.com/Academia-de-Dados/crawlers/actions">
         <img src="https://github.com/Academia-de-Dados/crawlers/actions/workflows/lint.yml/badge.svg">
     </a>

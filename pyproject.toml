@@ -18,17 +18,16 @@ classifiers = [
   "Framework :: Scrapy",
 ]
 dependencies = ["scrapy>=2.8.0,<3.0.0"]
+dynamic = ["version"]
 
 [project.optional-dependencies]
 dev = [
   "ipython>=8.12.0,<9.0.0",
   "ipdb>=0.13.13,<1.0.0",
   "gitlint==0.19.1",
-  "pre-commit>=3.2.1,4.0.0",
+  "pre-commit>=3.2.1,<4.0.0",
   "ruff>=0.0.260,<1.0.0",
 ]
-
-dynamic = ["version"]
 
 [project.urls]
 Documentation = "https://github.com/Academia-de-Dados/crawlers#readme"
@@ -37,6 +36,9 @@ Source = "https://github.com/Academia-de-Dados/crawlers"
 
 [tool.hatch.version]
 path = "exam/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+include = ["/exam", "/scrapy.cfg"]
 
 [tool.ruff]
 # Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
