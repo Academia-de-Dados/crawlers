@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 'Install gitlint'
-        run: 'pip install "gitlint==0.19.1"'
       - name: 'Test Commit Messages Lint'
-        run: 'gitlint'
+        run: |
+          pip install "hatch>=1.6.3,<2.0.0"
+          hatch run git:lint --ignore-stdin

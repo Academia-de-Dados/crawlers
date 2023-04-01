@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: '${{ matrix.python-version }}'
 
-      - name: 'Install ruff'
-        run: 'pip install "ruff>=0.0.260,<1.0.0"'
       - name: 'Test Code Lint'
-        run: 'ruff check .'
+        run: |
+          pip install "hatch>=1.6.3,<2.0.0"
+          hatch run style:check
