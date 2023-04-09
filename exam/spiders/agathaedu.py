@@ -1,10 +1,10 @@
 import re
-from typing import Type, Self
+from typing import Self
 
 from scrapy import Selector
+from scrapy.http import Response
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
-from scrapy.http import Response
 
 from exam.items import ExamItem
 
@@ -19,7 +19,7 @@ class AgathaeduSpider(CrawlSpider):
         Rule(LinkExtractor(restrict_css='.opcao'), callback='parse_questions'),
     )
 
-    def parse_questions(self: Self, response: Type[Response]):
+    def parse_questions(self: Self, response: Response):
         matter = (
             response.css('.topo > a:nth-child(3)::text')
             .get(default='*')
@@ -53,7 +53,7 @@ class AgathaeduSpider(CrawlSpider):
         item['enunciation'] = ' '.join(
             p.strip()
             for p in selector.css(
-                'p:not(.questoes-enem-vestibular-foco)::text'
+                'p:not(.questoes-enem-vestibular-foco)::text',
             ).getall()
         )
 
@@ -73,7 +73,7 @@ class AgathaeduSpider(CrawlSpider):
     def get_answer(self, enunciation: str, answers: list[str]) -> None | str:
         result = re.search(r'^\d\.', enunciation)
         if not result:
-            return
+            return None
 
         number = result.group()
         answer = [
@@ -83,12 +83,12 @@ class AgathaeduSpider(CrawlSpider):
         ]
 
         if not answer:
-            return
+            return None
 
         return answer[0]
 
     def get_origin(self, enunciation: str) -> None | str:
         result = re.search(r'\d\. \((?P<origin>.*)\)', enunciation)
         if not result:
-            return
+            return None
         return result.group('origin')
