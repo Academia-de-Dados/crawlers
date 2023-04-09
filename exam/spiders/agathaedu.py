@@ -1,5 +1,5 @@
 import re
-from datetime import datetime
+from datetime import UTC, datetime
 from string import ascii_uppercase
 from typing import Self
 
@@ -62,7 +62,9 @@ class AgathaeduSpider(CrawlSpider):
         item['alternatives'] = [
             {option: alternative.strip()}
             for option, alternative in zip(
-                ascii_uppercase, selector.css('ol li::text').getall()
+                ascii_uppercase,
+                selector.css('ol li::text').getall(),
+                strict=False,
             )
         ]
         item['multiple_choice'] = True
@@ -105,4 +107,4 @@ class AgathaeduSpider(CrawlSpider):
         ):
             return None
 
-        return datetime(int(year), 1, 1)
+        return datetime(int(year), 1, 1, tzinfo=UTC)
