@@ -1,36 +1,20 @@
-from dataclasses import dataclass
-from datetime import datetime
-from enum import StrEnum
+
+from scrapy import Field, Item
 
 
-class Difficulty(StrEnum):
-    """Difficulty enum."""
-
-    easy: str = "Fácil"
-    medium: str = "Média"
-    hard: str = "Difícil"
-
-
-class Matter(StrEnum):
-    """Matter enum."""
-
-    mathematics: str = "Matemática"
-    portuguese: str = "Português"
-    physics: str = "Física"
-
-
-@dataclass
-class ExerciseItem:
+class ExamItem(Item):
     """Item exercise."""
 
-    matter: Matter = Matter.mathematics
-    topic: str | None = None
-    difficulty: Difficulty = Difficulty.exercise
-    enunciation: str | None = None
-    alternatives: list[str] | None = None
-    multiple_choice: bool = False
-    enunciation_image: str | None = None
-    image_answer: str | None = None
-    answer: str | None = None
-    origin: str | None = None
-    release_date: datetime | None = None
+    matter = Field()
+    topic = Field()
+    difficulty = Field()
+    enunciation = Field()
+    alternatives = Field()
+    multiple_choice = Field()
+    enunciation_image = Field()
+    image_answer = Field()
+    answer = Field()
+    origin = Field()
+    release_date = Field()
+
+    url = Field()
