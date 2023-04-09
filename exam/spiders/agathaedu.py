@@ -1,4 +1,6 @@
 import re
+from datetime import datetime
+from string import ascii_uppercase
 from typing import Self
 
 from scrapy import Selector
@@ -20,11 +22,11 @@ class AgathaeduSpider(CrawlSpider):
     )
 
     def parse_questions(self: Self, response: Response):
-        matter = (
-            response.css('.topo > a:nth-child(3)::text')
-            .get(default='*')
-            .strip()
-        )
+        matter = re.sub(
+            r'>',
+            '',
+            response.css('.topo > a:nth-child(3)::text').get(default='*'),
+        ).strip()
         topic = (
             response.css('.questao-vestibular-titulo::text')
             .get(default='*')
@@ -58,15 +60,17 @@ class AgathaeduSpider(CrawlSpider):
         )
 
         item['alternatives'] = [
-            alternative.strip()
-            for alternative in selector.css('ol li::text').getall()
-        ]  # ajustar para ter as opções ('A': 1, 'B': 12, 'C': 42)
+            {option: alternative.strip()}
+            for option, alternative in zip(
+                ascii_uppercase, selector.css('ol li::text').getall()
+            )
+        ]
         item['multiple_choice'] = True
         item['enunciation_image'] = selector.css('img::attr(src)').get()
         item['image_answer'] = ''
         item['answer'] = self.get_answer(item['enunciation'], answers)
         item['origin'] = self.get_origin(item['enunciation'])
-        item['release_date'] = ''
+        item['release_date'] = self.get_release_date(item['origin'])
 
         yield item
 
@@ -92,3 +96,13 @@ class AgathaeduSpider(CrawlSpider):
         if not result:
             return None
         return result.group('origin')
+
+    def get_release_date(self: Self, origin: None | str) -> None | datetime:
+        if (
+            not origin
+            or not (result := re.search(r'\w (?P<year>\d{,4})', origin))
+            or not (year := result.group('year'))
+        ):
+            return None
+
+        return datetime(int(year), 1, 1)
