@@ -1,5 +1,9 @@
 ---
 services:
+  exam:
+    build: '.'
+    command: '${EXAM_SPIDER:-agathaedu}'
+
   mongo:
     image: 'mongo:6.0.5'
     restart: 'always'

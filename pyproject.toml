@@ -31,7 +31,12 @@ Source = "https://github.com/Academia-de-Dados/crawlers"
 [tool.hatch.version]
 path = "exam/__about__.py"
 
+[tool.hatch.envs.crawl]
+[tool.hatch.envs.crawl.scripts]
+run = "scrapy crawl {args}"
+
 [tool.hatch.envs.style]
+detached = true
 dependencies = ["ruff>=0.0.260,<1.0.0"]
 
 [tool.hatch.envs.style.scripts]
