@@ -1,7 +1,7 @@
 import re
 from datetime import UTC, datetime
 from string import ascii_uppercase
-from typing import Self
+from typing import ClassVar, Self
 
 from scrapy import Selector
 from scrapy.http import Response
@@ -13,8 +13,10 @@ from exam.items import ExamItem
 
 class AgathaeduSpider(CrawlSpider):
     name = 'agathaedu'
-    allowed_domains = ['projetoagathaedu.com.br']
-    start_urls = ['https://www.projetoagathaedu.com.br/banco-de-questoes.php']
+    allowed_domains: ClassVar[list[str]] = ['projetoagathaedu.com.br']
+    start_urls: ClassVar[list[str]] = [
+        'https://www.projetoagathaedu.com.br/banco-de-questoes.php',
+    ]
 
     rules = (
         Rule(LinkExtractor(restrict_css='div.lista-icones')),
